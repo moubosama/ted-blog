@@ -7,6 +7,7 @@ defaultContentLanguage = "ja"
   pagerSize = 10
 enableRobotsTXT = true
 buildDrafts = false
+buildFuture = true
 
 [params]
   env = "production"
