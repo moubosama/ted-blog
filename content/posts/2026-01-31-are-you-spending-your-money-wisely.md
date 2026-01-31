@@ -1,28 +1,13 @@
 ---
 title: "プロに学ぶ「賢い買い物」3つのルール"
-date: 2026-01-31T10:00:00+09:00
-draft: false
+date: 2026-01-31
 description: "BCGの調達リーダーが教える、値切りよりも大事なこと。世界中の企業で使われている購買テクニックを、日常の買い物に応用する方法。"
-summary: "BCGの調達リーダーが教える、値切りよりも大事な3つの購買ルール。"
-author: "TED要約ラボ"
-speaker: "Wolfgang Schnellbaecher"
-original_url: "https://www.ted.com/talks/wolfgang_schnellbaecher_are_you_spending_your_money_wisely"
-cover:
-  image: "images/posts/spending-wisely.jpg"
-  alt: "賢い買い物のイメージ"
-  hidden: false
-tags:
-  - "お金"
-  - "ビジネス"
-  - "仕事術"
-  - "交渉"
-categories:
-  - "TED要約"
-ShowToc: true
-TocOpen: false
+tags: ["お金", "ビジネス", "仕事術", "交渉"]
+categories: ["TED要約"]
+image: "/images/posts/spending-wisely.jpg"
 ---
 
-<a href="https://www.ted.com/talks/wolfgang_schnellbaecher_are_you_spending_your_money_wisely" target="_blank" rel="noopener" class="ted-video-link">&#9654; TED公式で動画を観る</a>
+![賢い買い物のイメージ](/images/posts/spending-wisely.jpg)
 
 ## このTEDを一言で
 
@@ -110,4 +95,4 @@ BCG（ボストン・コンサルティング・グループ）の調達部門�
 
 ---
 
-出典: [Are you spending your money wisely? - Wolfgang Schnellbaecher](https://www.ted.com/talks/wolfgang_schnellbaecher_are_you_spending_your_money_wisely)
+🎬 **[TED公式で動画を観る](https://www.ted.com/talks/wolfgang_schnellbaecher_are_you_spending_your_money_wisely)**
