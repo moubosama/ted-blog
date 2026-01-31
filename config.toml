@@ -22,6 +22,7 @@ buildFuture = true
   ShowToc = true
   TocOpen = false
   comments = false
+  ShowFullTextinRSS = true
 
   [params.homeInfoParams]
     Title = "TED要約ラボ"
@@ -68,6 +69,6 @@ buildFuture = true
     weight = 3
   [[menu.main]]
     identifier = "about"
-    name = "このサイトについて"
+    name = "About"
     url = "/about/"
     weight = 4
