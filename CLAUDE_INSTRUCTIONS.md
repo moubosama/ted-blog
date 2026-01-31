@@ -1,149 +1,163 @@
-# TED要約ブログ 記事生成ワークフロー
+# TED要約ラボ - Claude Code 指示書
 
-ユーザーが「TEDブログを更新して」「この動画を記事にして」等と依頼した場合、以下の手順を実行する。
+## プロジェクト概要
 
----
-
-## Step 1: トランスクリプト取得
-
-TED動画のURLからWebFetchでトランスクリプトページ（`/transcript`）を取得する。
-取得できない場合は動画ページ本体からトランスクリプトを抽出する。
+TED講演を日本語で要約するブログメディア。
+- サイト: https://moubosama.github.io/ted-blog/
+- 技術スタック: Hugo + PaperMod + GitHub Pages
 
 ---
 
-## Step 2: 記事生成
+## 📝 記事作成コマンド
 
-### 基本ルール
+### 基本コマンド
 
-**ペルソナ**: 週刊ダイヤモンドや東洋経済のコラムニスト。読者に語りかける文体。
+```
+記事作成: [TED URL]
+```
 
-**対象読者**: 日本のビジネスパーソン（30〜50代、管理職・経営層）
+例：
+```
+記事作成: https://www.ted.com/talks/wolfgang_schnellbaecher_are_you_spending_your_money_wisely
+```
 
-**文体**: だ・である調。一文50文字以内を基本とする。
+### 実行手順
 
-**厳守事項**: トランスクリプトに記載されていない事実は絶対に書かない。不明な点は割愛する。
+1. **トランスクリプト取得**
+   - TED URLからタイトル・講演者・内容を取得
+   - 日本語字幕があれば優先、なければ英語から要約
 
-### 記事の構成
+2. **記事生成**（memo_improved.md のルールに従う）
+   - 1,500〜2,000字
+   - 固定フォーマット：一言要約→講演者→3ポイント→アクション→感想
+   - 禁止事項を守る（説教調、SNSタグ、架空人格など）
 
-1. **導入**（フック） — 読者の危機感や好奇心を煽る問いかけから始める（2〜3段落）
-2. **核心的結論** — 動画が最も伝えたかったこと（1段落、太字で強調）
-3. **3つの要点解説** — 具体的な事例を交えた詳細。ストーリーとして展開する
-4. **明日から使える3つのアクション** — 日本の仕事現場で「何をすべきか」を具体的に
-5. **編集後記** — エンジニア／ビジネス視点の短い私見（`<div class="editor-note">` で囲む）
+3. **図解生成**
+   ```bash
+   # テンプレートをコピーして編集
+   cp templates/infographic-template.html temp-infographic.html
+   # 内容を書き換え
+   # PNG変換
+   ./scripts/generate-infographic.sh temp-infographic.html [output-name].png
+   ```
 
-### タイトルのルール
-- 32文字以内
-- **数字**または**対比**を含める（例：「9割は失敗する」「8,000基でも止まらない」）
-- 直訳・優等生的な表現は避ける
+4. **ファイル配置**
+   ```
+   content/posts/YYYY-MM-DD-[slug].md
+   static/images/posts/[slug].jpg          # アイキャッチ
+   static/images/posts/[slug]-infographic.png  # 図解
+   ```
 
-### 「AI臭さ」を排除するルール
-- 「さらに」「また」「加えて」の多用禁止。代わりに「驚くべきことに」「一方で」「ここからが面白い」等を使う
-- 各セクションの文章量を不均一にする（均一＝AIっぽい）
-- 2〜3文ごとに空行を入れる（モバイル読みやすさ）
-- 各パラグラフの**核心文を太字**にする（斜め読み対応）
-- 引用ブロック（`>`）でセクションの要点を際立たせる
-- 箇条書きだけで終わらせず、ストーリーの中に事例を織り込む
+5. **デプロイ**
+   ```bash
+   git add .
+   git commit -m "Add: [記事タイトル]"
+   git push
+   ```
 
-### 抽象化と用語解説
-- 登壇者の個人的エピソードを、汎用的な「ビジネス上の教訓」や「心理学的知見」に抽象化する
-- 専門用語（BATNA、BCP、行動経済学のバイアスなど）は本文の流れを止めない程度に短い注釈を加える
-
----
-
-## Step 3: Markdownファイル出力
-
-ファイル名: `content/posts/{YYYY-MM-DD}-{english-slug}.md`
-
-```markdown
----
-title: "日本語タイトル（32文字以内、数字or対比入り）"
-date: YYYY-MM-DDTHH:MM:SS+09:00
-draft: false
-description: "SNS拡散用の短い紹介文（140文字以内）"
-summary: "一覧ページ用の短い要約"
-author: "TED要約ラボ"
-speaker: "スピーカー名"
-original_url: "https://www.ted.com/talks/..."
-cover:
-  image: "images/posts/slug-name.jpg"
-  alt: "画像の説明"
-  hidden: false
-tags:
-  - "タグ1"
-  - "タグ2"
-  - "タグ3"
-categories:
-  - "TED要約"
-ShowToc: true
-TocOpen: false
----
-
-<a href="元URL" target="_blank" rel="noopener" class="ted-video-link">&#9654; TED公式で動画を観る</a>
-
-（本文をここに記述）
+6. **完了報告**
+   ```
+   ✅ 記事を公開しました
+   URL: https://moubosama.github.io/ted-blog/posts/YYYY-MM-DD-[slug]/
+   ```
 
 ---
 
-<div class="editor-note">
+## 🎨 図解作成コマンド
 
-**編集後記：** （エンジニア視点の短い私見）
+### 基本コマンド
 
-</div>
+```
+図解作成: [記事のslug]
+```
+
+すでに記事がある場合に図解だけ追加する。
+
+### 図解のルール
+
+- 講演の3つのポイントを視覚化
+- 各ポイントに「ありがちな失敗」と「プロの行動」の比較
+- ダークテーマ（#1a1a2e、#16213e）
+- サイズ: 800x1000px程度
+- 圧縮後200KB以下
 
 ---
 
-*この記事は [スピーカー名のTEDトーク](元URL) を要約・翻案したものである。*
+## 📁 ディレクトリ構造
+
+```
+ted-blog/
+├── content/
+│   └── posts/           # 記事Markdown
+├── static/
+│   └── images/
+│       └── posts/       # 画像（アイキャッチ・図解）
+├── templates/
+│   └── infographic-template.html
+├── scripts/
+│   └── generate-infographic.sh
+├── memo_improved.md     # 記事作成ガイドライン
+└── CLAUDE_INSTRUCTIONS.md  # このファイル
 ```
 
 ---
 
-## Step 4: サムネイル画像
+## ✅ 記事チェックリスト
 
-Unsplashから記事テーマに合った画像をダウンロードし、`static/images/posts/` に保存する。
-URLパターン: `https://images.unsplash.com/photo-XXXXX?w=1200&h=630&fit=crop&q=80`
+公開前に確認：
 
----
-
-## Step 5: SNS紹介文の生成
-
-記事と一緒に、以下のSNS投稿文を生成してユーザーに提示する。
-
-### X（Twitter）用（140文字以内）
-```
-【記事タイトル】
-
-フック（1文）
-
-核心的な一言（太字に相当する内容）
-
-▶ 記事URL
-```
-
-### Threads / LinkedIn用（300文字以内）
-```
-（読者への問いかけ）
-
-（記事の核心を2〜3文で）
-
-（「続きはこちら」でURL）
-```
+- [ ] タイトルが30字以内
+- [ ] descriptionが120字以内
+- [ ] 本文が1,500〜2,000字
+- [ ] 3つのポイントが明確
+- [ ] 具体的なアクションがある
+- [ ] TED公式リンクがある
+- [ ] アイキャッチ画像がある
+- [ ] 図解画像がある（3ポイントの後）
+- [ ] `[SNS_START]`等のタグが本文にない
+- [ ] 「編集長」「編集部」の表現がない
 
 ---
 
-## Step 6: デプロイ
+## 🚫 禁止事項（memo_improved.mdから）
 
+- `[SNS_START]`等のタグを本文に含めない
+- 「編集長」「編集部」などの架空人格禁止
+- 「再現性チェック」「辛口視点」セクション禁止
+- 日本企業批判や社会批評を長々と書かない
+- 読者を「凡人」や「消費」していると表現しない
+- 説教調の導入（「あなたはすべき」「しなければならない」）
+
+---
+
+## 💡 よく使うコマンド
+
+### Hugo ローカルプレビュー
 ```bash
-git add content/posts/ static/images/posts/
-git commit -m "Add TED summary: 記事タイトル"
-git push
+cd ted-blog
+hugo server -D
+# http://localhost:1313/ted-blog/ で確認
 ```
 
-GitHub Actionsが自動でHugoビルド→GitHub Pagesに公開する。
+### 記事一覧確認
+```bash
+ls -la content/posts/
+```
+
+### 画像一覧確認
+```bash
+ls -la static/images/posts/
+```
+
+### デプロイ状況確認
+```bash
+git log --oneline -5
+```
 
 ---
 
-## 注意事項
+## 🔗 参考リンク
 
-- トランスクリプトが3000語を超える場合は、冒頭・中盤のハイライト・結末に絞って要約する
-- 原文の内容を正確に反映しつつ、日本のビジネス文脈に合わせて翻案する
-- 画像がダウンロードできない場合はカバー画像なしでも問題ない（PaperModは画像なしでも正常表示）
+- [TED公式](https://www.ted.com/)
+- [Hugo PaperMod](https://github.com/adityatelange/hugo-PaperMod)
+- [GitHub Pages](https://pages.github.com/)

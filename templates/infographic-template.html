@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}}</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .infographic {
+      width: 800px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      border-radius: 20px;
+      padding: 40px;
+      color: white;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: linear-gradient(90deg, #f39c12, #e74c3c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header .subtitle {
+      font-size: 14px;
+      color: #8892b0;
+    }
+
+    .flow {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step {
+      display: flex;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .step-number {
+      width: 60px;
+      min-width: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .number-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .step:nth-child(1) .number-circle { background: linear-gradient(135deg, #3498db, #2980b9); }
+    .step:nth-child(2) .number-circle { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+    .step:nth-child(3) .number-circle { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+
+    .connector {
+      flex: 1;
+      width: 3px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+      margin: 5px auto;
+    }
+
+    .step:last-child .connector {
+      display: none;
+    }
+
+    .step-content {
+      flex: 1;
+      background: rgba(255,255,255,0.05);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .step-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step:nth-child(1) .step-title { color: #3498db; }
+    .step:nth-child(2) .step-title { color: #e74c3c; }
+    .step:nth-child(3) .step-title { color: #2ecc71; }
+
+    .step-desc {
+      font-size: 14px;
+      color: #ccd6f6;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .comparison {
+      display: flex;
+      gap: 12px;
+    }
+
+    .comparison-box {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+
+    .bad {
+      background: rgba(231, 76, 60, 0.15);
+      border: 1px solid rgba(231, 76, 60, 0.3);
+    }
+
+    .bad .label {
+      color: #e74c3c;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .good {
+      background: rgba(46, 204, 113, 0.15);
+      border: 1px solid rgba(46, 204, 113, 0.3);
+    }
+
+    .good .label {
+      color: #2ecc71;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .comparison-box p {
+      color: #a8b2d1;
+      line-height: 1.5;
+    }
+
+    .quote-box {
+      background: rgba(241, 196, 15, 0.1);
+      border-left: 3px solid #f1c40f;
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 12px;
+    }
+
+    .quote-box p {
+      font-size: 13px;
+      color: #f1c40f;
+      font-style: italic;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: #8892b0;
+    }
+
+    .source {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      font-size: 11px;
+      color: #ccd6f6;
+    }
+
+    .ted-logo {
+      color: #e62b1e;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="infographic">
+    <div class="header">
+      <h1>💡 {{TITLE}}</h1>
+      <p class="subtitle">{{SPEAKER}} のTED講演から</p>
+    </div>
+
+    <div class="flow">
+      <!-- Step 1 -->
+      <div class="step">
+        <div class="step-number">
+          <div class="number-circle">1</div>
+          <div class="connector"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">
+            {{ICON1}} {{POINT1_TITLE}}
+          </div>
+          <p class="step-desc">
+            {{POINT1_DESC}}
+          </p>
+          <div class="comparison">
+            <div class="comparison-box bad">
+              <div class="label">✗ {{BAD1_LABEL}}</div>
+              <p>{{BAD1_TEXT}}</p>
+            </div>
+            <div class="comparison-box good">
+              <div class="label">✓ {{GOOD1_LABEL}}</div>
+              <p>{{GOOD1_TEXT}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step">
+        <div class="step-number">
+          <div class="number-circle">2</div>
+          <div class="connector"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">
+            {{ICON2}} {{POINT2_TITLE}}
+          </div>
+          <p class="step-desc">
+            {{POINT2_DESC}}
+          </p>
+          <div class="comparison">
+            <div class="comparison-box bad">
+              <div class="label">✗ {{BAD2_LABEL}}</div>
+              <p>{{BAD2_TEXT}}</p>
+            </div>
+            <div class="comparison-box good">
+              <div class="label">✓ {{GOOD2_LABEL}}</div>
+              <p>{{GOOD2_TEXT}}</p>
+            </div>
+          </div>
+          <!-- 引用ボックス（オプション、不要なら削除） -->
+          <div class="quote-box">
+            <p>{{QUOTE}}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <div class="step-number">
+          <div class="number-circle">3</div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">
+            {{ICON3}} {{POINT3_TITLE}}
+          </div>
+          <p class="step-desc">
+            {{POINT3_DESC}}
+          </p>
+          <div class="comparison">
+            <div class="comparison-box bad">
+              <div class="label">✗ {{BAD3_LABEL}}</div>
+              <p>{{BAD3_TEXT}}</p>
+            </div>
+            <div class="comparison-box good">
+              <div class="label">✓ {{GOOD3_LABEL}}</div>
+              <p>{{GOOD3_TEXT}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>{{FOOTER_MESSAGE}}</p>
+      <div class="source">
+        <span class="ted-logo">TED</span>
+        <span>{{TED_TITLE}} - {{SPEAKER}}</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+<!--
+===========================================
+プレースホルダー一覧（これを置換して使用）
+===========================================
+
+【ヘッダー】
+{{TITLE}}           - 図解のタイトル（例：プロに学ぶ「賢い買い物」3つのルール）
+{{SPEAKER}}         - 講演者名（例：Wolfgang Schnellbaecher）
+
+【ポイント1】
+{{ICON1}}           - アイコン（例：🎯）
+{{POINT1_TITLE}}    - タイトル（例：買う前に「優先順位」を決める）
+{{POINT1_DESC}}     - 説明文（例：値引き交渉の<strong>前の段階</strong>で勝負は決まっている。）
+{{BAD1_LABEL}}      - 失敗ラベル（例：ありがちな失敗）
+{{BAD1_TEXT}}       - 失敗例（例：「なんとなく」タワマンに憧れる）
+{{GOOD1_LABEL}}     - 成功ラベル（例：プロの行動）
+{{GOOD1_TEXT}}      - 成功例（例：買う前に優先順位を話し合う）
+
+【ポイント2】
+{{ICON2}}           - アイコン（例：🔄）
+{{POINT2_TITLE}}    - タイトル
+{{POINT2_DESC}}     - 説明文
+{{BAD2_LABEL}}      - 失敗ラベル
+{{BAD2_TEXT}}       - 失敗例
+{{GOOD2_LABEL}}     - 成功ラベル
+{{GOOD2_TEXT}}      - 成功例
+{{QUOTE}}           - 引用（オプション、不要なら quote-box ごと削除）
+
+【ポイント3】
+{{ICON3}}           - アイコン（例：🛡️）
+{{POINT3_TITLE}}    - タイトル
+{{POINT3_DESC}}     - 説明文
+{{BAD3_LABEL}}      - 失敗ラベル
+{{BAD3_TEXT}}       - 失敗例
+{{GOOD3_LABEL}}     - 成功ラベル
+{{GOOD3_TEXT}}      - 成功例
+
+【フッター】
+{{FOOTER_MESSAGE}}  - まとめ一言（例：値切りは交渉の最下層。プロは「買い方」に勝負をつけている。）
+{{TED_TITLE}}       - TED講演タイトル（例：Are you spending your money wisely?）
+
+===========================================
+-->
