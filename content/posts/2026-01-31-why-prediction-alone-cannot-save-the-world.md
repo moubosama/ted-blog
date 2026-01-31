@@ -17,6 +17,8 @@ ShowToc: true
 TocOpen: false
 ---
 
+<a href="https://www.ted.com/talks/catherine_nakalembe_why_can_t_we_better_prepare_for_extreme_weather" target="_blank" rel="noopener" class="ted-video-link">&#9654; TED公式で動画を観る</a>
+
 ## はじめに
 
 8,000基以上の衛星、高精度なAIモデル、圧倒的な計算能力——。現代のテクノロジーは、干ばつや洪水を数週間から数ヶ月前に予測することを可能にした。にもかかわらず、2024年には世界の約3人に1人が次の食事を心配する状況にあり、気候災害は1980年代と比較して2倍以上に増加している。

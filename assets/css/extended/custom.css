@@ -1,0 +1,71 @@
+/* ============================================
+   TED要約ラボ — 日本語最適化CSS
+   ============================================ */
+
+/* 日本語フォント & 行間 */
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    Meiryo, sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* 見出しフォント */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* 記事本文の読みやすさ */
+.post-content {
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.post-content p {
+  margin-bottom: 1.5em;
+}
+
+/* TED動画リンクボタン */
+.ted-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.7em 1.5em;
+  background: #e62b1e;
+  color: #fff !important;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin: 1.5em 0;
+}
+
+.ted-video-link:hover {
+  background: #c4241a;
+  color: #fff !important;
+}
+
+/* 教訓セクション */
+.post-content hr + h2 {
+  margin-top: 1em;
+}
+
+/* 記事メタ情報 */
+.post-meta {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* タグの見た目 */
+.post-tags a {
+  font-size: 0.85rem;
+}
+
+/* 読了時間の日本語対応 */
+.post-content {
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
