@@ -1,41 +1,43 @@
 baseURL = "https://moubosama.github.io/ted-blog/"
 languageCode = "ja"
-title = "TED要約ラボ — ビジネスに効くTEDトーク"
-theme = "PaperMod"
+title = "TED要約ラボ"
+theme = "Mainroad"
 defaultContentLanguage = "ja"
-[pagination]
-  pagerSize = 10
+paginate = 10
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = true
 
-[params]
-  env = "production"
-  description = "TEDトークをビジネス視点で翻訳・要約。毎日自動更新。"
-  author = "TED要約ラボ"
-  defaultTheme = "auto"
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = false
-  ShowToc = true
-  TocOpen = false
-  comments = false
-  ShowFullTextinRSS = true
+[Author]
+  name = "TED要約ラボ"
+  bio = "TEDトークをビジネスパーソン向けに日本語で要約・解説するメディア。"
 
-  [params.homeInfoParams]
-    Title = "TED要約ラボ"
-    Content = "TEDトークをビジネスパーソン向けに日本語で要約・解説するメディア。"
+[Params]
+  description = "TEDトークをビジネス視点で要約。明日から使える知見を届ける。"
+  opengraph = true
+  schema = true
+  twitter_cards = true
+  readmore = true
+  authorbox = false
+  pager = true
+  toc = true
+  post_meta = ["date", "categories"]
+  mainSections = ["posts"]
+  googleFontsLink = "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap"
+  customCSS = ["css/custom.css"]
 
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/moubosama/ted-blog"
+[Params.logo]
+  subtitle = "ビジネスに効くTEDトーク"
 
-  [params.cover]
-    hidden = false
-    hiddenInList = false
-    hiddenInSingle = false
+[Params.sidebar]
+  home = "right"
+  list = "right"
+  single = "right"
+  widgets = ["search", "recent", "categories", "taglist"]
+
+[Params.widgets]
+  recent_num = 5
+  tags_counter = true
 
 [markup]
   [markup.highlight]
@@ -45,7 +47,7 @@ buildFuture = true
       unsafe = true
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
 
 [taxonomies]
   tag = "tags"

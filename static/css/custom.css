@@ -1,0 +1,120 @@
+/* ============================================
+   TED要約ラボ — Mainroad カスタムCSS
+   ============================================ */
+
+/* ---- 1. 日本語フォント & 可読性 ---- */
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* ---- 2. 記事本文 ---- */
+.post__content {
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.post__content p {
+  margin-bottom: 1.4em;
+}
+
+/* ---- 3. 見出しアクセントライン ---- */
+.post__content h2 {
+  border-left: 5px solid #1d3557;
+  padding-left: 15px;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+  font-size: 1.35rem;
+}
+
+.post__content h3 {
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  font-size: 1.15rem;
+}
+
+/* ---- 4. TED動画リンクボタン ---- */
+.ted-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.7em 1.5em;
+  background: #e62b1e;
+  color: #fff !important;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin: 1.5em 0;
+}
+
+.ted-video-link:hover {
+  background: #c4241a;
+  color: #fff !important;
+}
+
+/* ---- 5. 引用ブロック ---- */
+.post__content blockquote {
+  border-left: 4px solid #1d3557;
+  padding: 0.8em 1.2em;
+  margin: 1.5em 0;
+  background: #f8f9fa;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ---- 6. リスト ---- */
+.post__content ul,
+.post__content ol {
+  margin-bottom: 1.2em;
+  padding-left: 1.5em;
+}
+
+.post__content li {
+  margin-bottom: 0.4em;
+  line-height: 1.7;
+}
+
+/* ---- 7. 画像 ---- */
+.post__content img {
+  border-radius: 8px;
+  margin: 1em 0;
+}
+
+/* ---- 8. サイドバー微調整 ---- */
+.widget {
+  font-size: 0.9rem;
+}
+
+.widget__title {
+  font-size: 1rem;
+}
+
+/* ---- 9. ロゴ周り ---- */
+.logo__title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+}
+
+.logo__tagline {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ---- 10. モバイル ---- */
+@media (max-width: 768px) {
+  .post__content {
+    font-size: 1rem;
+  }
+  .post__content h2 {
+    font-size: 1.2rem;
+  }
+}
