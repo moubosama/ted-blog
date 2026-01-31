@@ -7,7 +7,7 @@ categories: ["TED要約"]
 thumbnail: "images/posts/spending-wisely.jpg"
 ---
 
-![賢い買い物のイメージ](images/posts/spending-wisely.jpg)
+![賢い買い物のイメージ](/ted-blog/images/posts/spending-wisely.jpg)
 
 ## このTEDを一言で
 
