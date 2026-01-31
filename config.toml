@@ -24,7 +24,7 @@ buildDrafts = false
 
   [params.homeInfoParams]
     Title = "TED要約ラボ"
-    Content = "TEDトークをビジネスパーソン向けに日本語で要約・解説するメディア。AIが毎日自動更新。"
+    Content = "TEDトークをビジネスパーソン向けに日本語で要約・解説するメディア。"
 
   [[params.socialIcons]]
     name = "github"

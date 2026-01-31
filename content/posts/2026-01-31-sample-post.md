@@ -72,4 +72,4 @@ IKEAの創業者イングヴァル・カンプラードは、輸送コストの�
 
 ---
 
-*この記事は [Sample SpeakerのTEDトーク](https://www.ted.com/talks/sample) をAIが要約・翻案したものである。*
+*この記事は [Sample SpeakerのTEDトーク](https://www.ted.com/talks/sample) を要約・翻案したものである。*

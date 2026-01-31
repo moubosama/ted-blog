@@ -87,4 +87,4 @@ Nakalembeが提唱する処方箋は、テクノロジーの進化ではなく�
 
 ---
 
-*この記事は [Catherine NakalembeのTEDトーク](https://www.ted.com/talks/catherine_nakalembe_why_can_t_we_better_prepare_for_extreme_weather) をAIが要約・翻案したものである。*
+*この記事は [Catherine NakalembeのTEDトーク](https://www.ted.com/talks/catherine_nakalembe_why_can_t_we_better_prepare_for_extreme_weather) を要約・翻案したものである。*
