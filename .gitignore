@@ -1,0 +1,12 @@
+.env
+data/*.sqlite
+data/*.sqlite-journal
+public/
+resources/
+vendor/
+php/logs/*.log
+*.log
+.hugo_build.lock
+node_modules/
+data/pending/*.json
+data/processed/*.json

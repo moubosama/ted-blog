@@ -1,0 +1,71 @@
+baseURL = "https://moubosama.github.io/ted-blog/"
+languageCode = "ja"
+title = "TED要約ラボ — ビジネスに効くTEDトーク"
+theme = "PaperMod"
+defaultContentLanguage = "ja"
+paginate = 10
+enableRobotsTXT = true
+buildDrafts = false
+
+[params]
+  env = "production"
+  description = "TEDトークをビジネス視点で翻訳・要約。毎日自動更新。"
+  author = "TED要約ラボ"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = false
+  ShowToc = true
+  TocOpen = false
+  comments = false
+
+  [params.homeInfoParams]
+    Title = "TED要約ラボ"
+    Content = "TEDトークをビジネスパーソン向けに日本語で要約・解説するメディア。AIが毎日自動更新。"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/moubosama/ted-blog"
+
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "ホーム"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "tags"
+    name = "タグ"
+    url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    name = "カテゴリ"
+    url = "/categories/"
+    weight = 3
+  [[menu.main]]
+    identifier = "about"
+    name = "このサイトについて"
+    url = "/about/"
+    weight = 4

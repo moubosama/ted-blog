@@ -1,0 +1,21 @@
+{
+    "name": "ted-blog/auto-updater",
+    "description": "TED要約メディア自動更新バッチ",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "ext-curl": "*",
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*",
+        "ext-simplexml": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*"
+    },
+    "autoload": {
+        "classmap": ["lib/"]
+    },
+    "scripts": {
+        "run": "php cron.php",
+        "dry-run": "php cron.php --dry-run"
+    }
+}
