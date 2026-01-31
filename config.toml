@@ -3,7 +3,8 @@ languageCode = "ja"
 title = "TED要約ラボ"
 theme = "Mainroad"
 defaultContentLanguage = "ja"
-paginate = 10
+[pagination]
+  pagerSize = 10
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = true
