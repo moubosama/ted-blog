@@ -75,3 +75,13 @@ buildFuture = true
     name = "About"
     url = "/about/"
     weight = 4
+  [[menu.main]]
+    identifier = "contact"
+    name = "お問い合わせ"
+    url = "/contact/"
+    weight = 5
+  [[menu.main]]
+    identifier = "privacy"
+    name = "プライバシーポリシー"
+    url = "/privacy/"
+    weight = 6
