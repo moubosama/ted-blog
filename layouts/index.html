@@ -1,0 +1,11 @@
+{{ define "main" }}
+<main class="main" role="main">
+	<div class="card-grid">
+		{{ $paginator := .Paginate (where .Site.RegularPages "Type" "in" .Site.Params.mainSections) }}
+		{{- range $paginator.Pages }}
+			{{- .Render "summary" }}
+		{{- end }}
+	</div>
+	{{ partial "pagination.html" . }}
+</main>
+{{ end }}

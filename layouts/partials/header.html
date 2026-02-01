@@ -1,0 +1,31 @@
+<header class="header header--custom">
+	<div class="container header__container">
+		<div class="header__inner">
+			<div class="header__logo">
+				<a href="{{ "" | relLangURL }}" class="header__logo-link">
+					<span class="header__logo-title">{{ .Site.Title }}</span>
+					{{- with .Site.Params.logo.subtitle }}
+					<span class="header__logo-tagline">{{ . }}</span>
+					{{- end }}
+				</a>
+			</div>
+			{{- if .Site.Menus.main }}
+			<nav class="header__nav">
+				<button class="header__nav-toggle menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+					<span class="menu__btn-title" tabindex="-1">{{ T "menu_label" }}</span>
+				</button>
+				<ul class="header__nav-list menu__list">
+					{{- $currentNode := . }}
+					{{- range .Site.Menus.main }}
+					{{- if .Name }}
+					<li class="header__nav-item{{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }} header__nav-item--active{{ end }}">
+						<a class="header__nav-link" href="{{ .URL }}">{{ .Name }}</a>
+					</li>
+					{{- end }}
+					{{- end }}
+				</ul>
+			</nav>
+			{{- end }}
+		</div>
+	</div>
+</header>

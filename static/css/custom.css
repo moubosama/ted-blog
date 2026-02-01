@@ -1,13 +1,14 @@
 /* ============================================
-   TED要約ラボ — Mainroad カスタムCSS
+   TED要約ラボ — カスタムCSS v2
    ============================================ */
 
-/* ---- 1. 日本語フォント & 可読性 ---- */
+/* ---- 0. 全体背景・ベース ---- */
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN",
     "Hiragino Sans", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.8;
   letter-spacing: 0.03em;
+  background: #f5f7fa;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,7 +17,221 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
 }
 
-/* ---- 2. 記事本文 ---- */
+/* Mainroadデフォルトの外枠シャドウを消す */
+.container--outer {
+  box-shadow: none;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* ---- 1. ヘッダー ---- */
+.header--custom {
+  background: #fff;
+  border-bottom: 1px solid #e8ecf1;
+  padding: 0;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.header__logo-link {
+  text-decoration: none;
+  color: #1d3557;
+}
+
+.header__logo-title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+.header__logo-tagline {
+  font-size: 0.8rem;
+  color: #6b7b8d;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ナビゲーション */
+.header__nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 4px;
+  background: transparent;
+}
+
+.header__nav-item {
+  background: transparent;
+}
+
+.header__nav-link {
+  display: block;
+  padding: 8px 16px;
+  color: #4a5568;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.header__nav-link:hover {
+  background: #f0f4f8;
+  color: #1d3557;
+}
+
+.header__nav-item--active .header__nav-link {
+  background: #1d3557;
+  color: #fff;
+}
+
+/* モバイルナビ */
+.header__nav-toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .header__inner {
+    flex-wrap: wrap;
+    padding: 12px 0;
+  }
+  .header__nav {
+    width: 100%;
+  }
+  .header__nav-toggle {
+    display: block;
+    width: 100%;
+    background: #1d3557;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+  .header__nav-list {
+    flex-direction: column;
+    display: none;
+    background: #1d3557;
+  }
+  .header__nav-list .header__nav-link {
+    color: #fff;
+    border-radius: 0;
+    padding: 12px 16px;
+  }
+  .header__nav-list .header__nav-link:hover {
+    background: rgba(255,255,255,0.1);
+  }
+}
+
+/* Mainroadデフォルトのmenu下線を消す */
+.menu {
+  border-bottom: none;
+}
+
+/* ---- 2. カードグリッド（トップページ） ---- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 767px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ---- 3. カードデザイン ---- */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.card__thumbnail {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card__image {
+  transform: scale(1.03);
+}
+
+.card__body {
+  padding: 20px;
+}
+
+.card__category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #e62b1e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 8px;
+}
+
+.card__title a {
+  color: #1a202c;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.card__title a:hover {
+  color: #1d3557;
+}
+
+.card__date {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card__description {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.7;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---- 4. 記事本文（single page） ---- */
 .post__content {
   font-size: 1.05rem;
   line-height: 1.85;
@@ -26,7 +241,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1.4em;
 }
 
-/* ---- 3. 見出しアクセントライン ---- */
+/* 見出しアクセントライン */
 .post__content h2 {
   border-left: 5px solid #1d3557;
   padding-left: 15px;
@@ -41,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.15rem;
 }
 
-/* ---- 4. TED動画リンクボタン ---- */
+/* ---- 5. TED動画リンクボタン ---- */
 .ted-video-link {
   display: inline-flex;
   align-items: center;
@@ -62,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff !important;
 }
 
-/* ---- 5. 引用ブロック ---- */
+/* ---- 6. 引用ブロック ---- */
 .post__content blockquote {
   border-left: 4px solid #1d3557;
   padding: 0.8em 1.2em;
@@ -71,7 +286,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0 4px 4px 0;
 }
 
-/* ---- 6. リスト ---- */
+/* ---- 7. リスト ---- */
 .post__content ul,
 .post__content ol {
   margin-bottom: 1.2em;
@@ -83,13 +298,13 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
 }
 
-/* ---- 7. 画像 ---- */
+/* ---- 8. 画像 ---- */
 .post__content img {
   border-radius: 8px;
   margin: 1em 0;
 }
 
-/* ---- 8. サイドバー微調整 ---- */
+/* ---- 9. サイドバー微調整 ---- */
 .widget {
   font-size: 0.9rem;
 }
@@ -98,23 +313,52 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
 }
 
-/* ---- 9. ロゴ周り ---- */
-.logo__title {
-  font-family: "Noto Sans JP", sans-serif;
-  font-weight: 700;
+/* ---- 10. フッター ---- */
+.footer--custom {
+  background: #1d3557;
+  color: #fff;
+  padding: 24px 0;
+  text-align: center;
 }
 
-.logo__tagline {
+.footer--custom .footer__copyright {
   font-size: 0.85rem;
-  color: #888;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* ---- 10. モバイル ---- */
+/* ---- 11. ページネーション ---- */
+.pagination {
+  margin-top: 32px;
+  text-align: center;
+}
+
+.pagination__item {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+
+/* ---- 12. wrapper背景 ---- */
+.wrapper {
+  background: transparent;
+  padding: 32px 24px;
+}
+
+/* ---- 13. モバイル ---- */
 @media (max-width: 768px) {
   .post__content {
     font-size: 1rem;
   }
   .post__content h2 {
     font-size: 1.2rem;
+  }
+  .wrapper {
+    padding: 16px 12px;
+  }
+  .card__body {
+    padding: 16px;
+  }
+  .card__title {
+    font-size: 1rem;
   }
 }

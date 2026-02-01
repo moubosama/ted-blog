@@ -31,7 +31,7 @@ buildFuture = true
   subtitle = "ビジネスに効くTEDトーク"
 
 [Params.sidebar]
-  home = "right"
+  home = "false"
   list = "right"
   single = "right"
   widgets = ["search", "recent", "categories", "taglist"]
