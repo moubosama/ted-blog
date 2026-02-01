@@ -1,6 +1,6 @@
 baseURL = "https://moubosama.github.io/ted-blog/"
 languageCode = "ja"
-title = "TED要約ラボ"
+title = "TED Talks、すぐわかる解説"
 theme = "Mainroad"
 defaultContentLanguage = "ja"
 [pagination]
@@ -10,11 +10,11 @@ buildDrafts = false
 buildFuture = true
 
 [Author]
-  name = "TED要約ラボ"
-  bio = "TEDトークをビジネスパーソン向けに日本語で要約・解説するメディア。"
+  name = "TED Talks、すぐわかる解説"
+  bio = "世界の専門家プレゼン「TED Talks」を、3分で読める日本語解説にしてお届け。"
 
 [Params]
-  description = "TEDトークをビジネス視点で要約。明日から使える知見を届ける。"
+  description = "TED Talksを3分でわかる日本語解説に。仕事・お金・健康・習慣、明日使えるネタだけ厳選。"
   opengraph = true
   schema = true
   twitter_cards = true
@@ -28,7 +28,7 @@ buildFuture = true
   customCSS = ["css/custom.css"]
 
 [Params.logo]
-  subtitle = "ビジネスに効くTEDトーク"
+  subtitle = "3分で読める、明日使えるTED解説"
 
 [Params.sidebar]
   home = "false"

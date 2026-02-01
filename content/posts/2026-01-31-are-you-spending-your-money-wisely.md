@@ -3,7 +3,7 @@ title: "プロに学ぶ「賢い買い物」3つのルール"
 date: 2026-01-25
 description: "BCGの調達リーダーが教える、値切りよりも大事なこと。世界中の企業で使われている購買テクニックを、日常の買い物に応用する方法。"
 tags: ["お金", "ビジネス", "仕事術", "交渉"]
-categories: ["TED要約"]
+categories: ["すぐわかる解説"]
 thumbnail: "images/posts/spending-wisely.jpg"
 ---
 

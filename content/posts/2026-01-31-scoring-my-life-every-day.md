@@ -3,7 +3,7 @@ title: "人生を毎日「採点」したら何が変わったか"
 date: 2026-01-31
 description: "経営コンサルタントが18ヶ月間、毎晩90秒で人生の9項目を採点し続けた結果。見えてきた意外なパターンとは。"
 tags: ["習慣", "自己管理", "メンタル", "仕事術"]
-categories: ["TED要約"]
+categories: ["すぐわかる解説"]
 thumbnail: "images/posts/scoring-my-life.jpg"
 ---
 

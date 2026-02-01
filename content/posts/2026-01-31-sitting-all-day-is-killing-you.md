@@ -3,7 +3,7 @@ title: "座りすぎが寿命を縮める？「30分に5分」の科学"
 date: 2026-01-28
 description: "ジャーナリストが2万人規模の実験で証明した、座りっぱなしの害と「30分に5分動く」だけの劇的な効果。"
 tags: ["健康", "生産性", "習慣", "仕事術"]
-categories: ["TED要約"]
+categories: ["すぐわかる解説"]
 thumbnail: "images/posts/sitting-all-day.jpg"
 ---
 
