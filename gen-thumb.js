@@ -135,5 +135,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'raise-brave-kids.jpg')
   });
 
+  // 4. losing-everything-resilience.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(50,20,40,0.85) 0%, rgba(30,15,25,0.45) 100%)',
+    title: '全部失って気づいた<br><span class="highlight">「本当の強さ」</span>の正体',
+    subtitle: '100万人の赤ちゃんを救った起業家が、会社倒産で壊れてから見つけたもの',
+    speaker: 'Jane Marie Chen',
+    outputPath: path.join(outDir, 'losing-everything-resilience.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
