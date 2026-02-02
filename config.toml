@@ -8,7 +8,7 @@ defaultContentLanguage = "ja"
 enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
-googleAnalytics = "G-250W10J60X"
+googleAnalytics = "G-VH4VRR6E5Y"
 
 [Author]
   name = "TED Talks、すぐわかる解説"
