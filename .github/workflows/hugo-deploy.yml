@@ -12,6 +12,9 @@ on:
       - 'themes/**'
       - 'layouts/**'
 
+  schedule:
+    - cron: '0 22 * * *'  # 毎日 UTC 22:00 = JST 07:00
+
   workflow_dispatch:
 
 permissions:

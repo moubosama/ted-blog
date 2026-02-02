@@ -7,7 +7,7 @@ defaultContentLanguage = "ja"
   pagerSize = 10
 enableRobotsTXT = true
 buildDrafts = false
-buildFuture = true
+buildFuture = false
 googleAnalytics = "G-250W10J60X"
 
 [Author]
