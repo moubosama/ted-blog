@@ -145,5 +145,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'losing-everything-resilience.jpg')
   });
 
+  // 5. love-pill.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(60,20,50,0.85) 0%, rgba(40,10,30,0.45) 100%)',
+    title: '<span class="highlight">「全人類を愛せる薬」</span><br>があったら飲む？',
+    subtitle: 'アリストテレスとイエスが「愛」について真逆のことを言っていた',
+    speaker: 'Meghan Sullivan',
+    outputPath: path.join(outDir, 'love-pill.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
