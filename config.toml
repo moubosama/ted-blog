@@ -10,6 +10,10 @@ buildDrafts = false
 buildFuture = false
 googleAnalytics = "G-VH4VRR6E5Y"
 
+[services]
+  [services.googleAnalytics]
+    ID = "G-VH4VRR6E5Y"
+
 [Author]
   name = "TED Talks、すぐわかる解説"
   bio = "世界の専門家プレゼン「TED Talks」を、3分で読める日本語解説にしてお届け。"
