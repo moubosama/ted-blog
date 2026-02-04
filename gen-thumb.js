@@ -155,5 +155,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'love-pill.jpg')
   });
 
+  // 6. win-win-win.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(20,50,40,0.85) 0%, rgba(10,30,25,0.45) 100%)',
+    title: '<span class="highlight">「勝ち負け思考」</span>の罠から<br>抜け出す方法',
+    subtitle: 'Whole Foods創業者が語る「Win-Win-Win」の哲学',
+    speaker: 'John Mackey',
+    outputPath: path.join(outDir, 'win-win-win.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
