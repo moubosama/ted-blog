@@ -165,5 +165,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'win-win-win.jpg')
   });
 
+  // 7. build-a-bear.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(80,30,30,0.85) 0%, rgba(50,15,15,0.45) 100%)',
+    title: '倒産寸前の会社を救った<br><span class="highlight">「たった1つの問い」</span>',
+    subtitle: 'Build-A-Bear CEOが5000万ドルの赤字から株価2000%成長を実現した方法',
+    speaker: 'Sharon Price John',
+    outputPath: path.join(outDir, 'build-a-bear.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
