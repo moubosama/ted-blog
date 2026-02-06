@@ -175,5 +175,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'build-a-bear.jpg')
   });
 
+  // 8. comics-learning.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(30,50,80,0.85) 0%, rgba(15,25,50,0.45) 100%)',
+    title: 'なぜ<span class="highlight">「漫画で学ぶ」</span>は<br>効果があるのか',
+    subtitle: '学校図書館に漫画を置いたら利用率が80%増えた',
+    speaker: 'Gene Luen Yang',
+    outputPath: path.join(outDir, 'comics-learning.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
