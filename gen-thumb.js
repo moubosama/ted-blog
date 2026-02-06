@@ -175,14 +175,14 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'build-a-bear.jpg')
   });
 
-  // 8. comics-learning.jpg
+  // 8. teams-fail.jpg
   await generateThumbnail({
-    bgUrl: 'https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?w=1200&h=630&fit=crop',
-    overlayGradient: 'linear-gradient(135deg, rgba(30,50,80,0.85) 0%, rgba(15,25,50,0.45) 100%)',
-    title: 'なぜ<span class="highlight">「漫画で学ぶ」</span>は<br>効果があるのか',
-    subtitle: '学校図書館に漫画を置いたら利用率が80%増えた',
-    speaker: 'Gene Luen Yang',
-    outputPath: path.join(outDir, 'comics-learning.jpg')
+    bgUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(40,30,60,0.85) 0%, rgba(20,15,35,0.45) 100%)',
+    title: 'チームが失敗する<br><span class="highlight">「意外とシンプルな理由」</span>',
+    subtitle: 'NASAの火星探査機が墜落した原因は「単位の確認をしなかった」こと',
+    speaker: 'Tessa West',
+    outputPath: path.join(outDir, 'teams-fail.jpg')
   });
 
   console.log('All thumbnails generated!');
