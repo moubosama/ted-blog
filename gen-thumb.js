@@ -185,5 +185,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'teams-fail.jpg')
   });
 
+  // 9. appreciation.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(50,40,20,0.85) 0%, rgba(30,25,10,0.45) 100%)',
+    title: '脳を変える<span class="highlight">「毎日の習慣」</span><br>マンホールが人生を変えた話',
+    subtitle: '最悪の1日に、なぜかマンホールの蓋に感動した。その瞬間から見え方が変わった',
+    speaker: 'Timm Chiusano',
+    outputPath: path.join(outDir, 'appreciation.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
