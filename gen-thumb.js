@@ -195,5 +195,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'appreciation.jpg')
   });
 
+  // 10. dog-communication.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(30,50,40,0.85) 0%, rgba(15,30,20,0.45) 100%)',
+    title: '犬との<span class="highlight">「本当のコミュニケーション」</span><br>を世界チャンピオンに学ぶ',
+    subtitle: '声で命令するのは、犬にとって一番不自然。では何が自然か？',
+    speaker: 'Jennifer Crank',
+    outputPath: path.join(outDir, 'dog-communication.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
