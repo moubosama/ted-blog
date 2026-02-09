@@ -205,5 +205,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'dog-communication.jpg')
   });
 
+  // 11. gottman-relationship.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(60,30,40,0.85) 0%, rgba(40,15,25,0.45) 100%)',
+    title: '結婚50年の研究者夫婦が教える<br><span class="highlight">「正しいケンカの仕方」</span>',
+    subtitle: 'ケンカの最初の3分で、6年後の関係が96%の精度で予測できる',
+    speaker: 'Julie & John Gottman',
+    outputPath: path.join(outDir, 'gottman-relationship.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
