@@ -215,5 +215,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'gottman-relationship.jpg')
   });
 
+  // 12. quit-drinking.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(40,40,50,0.85) 0%, rgba(20,20,30,0.45) 100%)',
+    title: 'お酒をやめた日、<br><span class="highlight">最初にググったこと</span>',
+    subtitle: '「お酒以外に何をすればいいの？」——7年間の問題飲酒をやめた翌日の検索',
+    speaker: 'Edith Zimmerman',
+    outputPath: path.join(outDir, 'quit-drinking.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
