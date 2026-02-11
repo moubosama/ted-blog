@@ -4,7 +4,7 @@ date: 2026-02-11T00:00:00+09:00
 description: "「私は心を読めません。でも人を読むことはできます」——30年かけて人間行動を研究したメンタリストが教える、誰でも使える3つのテクニック。"
 tags: ["コミュニケーション", "心理学", "ビジネス", "人間関係"]
 categories: ["すぐわかる解説"]
-thumbnail: "images/posts/mind-reading.jpg"
+thumbnail: "images/posts/mind-reader.jpg"
 ---
 
 ## このTEDを一言で
