@@ -225,5 +225,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'quit-drinking.jpg')
   });
 
+  // 13. mind-reading.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(20,20,40,0.85) 0%, rgba(10,10,25,0.45) 100%)',
+    title: '「世界最高のマインドリーダー」が明かす<br><span class="highlight">人の心を読む技術</span>',
+    subtitle: '心は読めない。でも「人」は読める。30年かけて学んだスキル',
+    speaker: 'Oz Pearlman',
+    outputPath: path.join(outDir, 'mind-reading.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
