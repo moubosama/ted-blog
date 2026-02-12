@@ -225,14 +225,24 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'quit-drinking.jpg')
   });
 
-  // 13. mind-reading.jpg
+  // 13. mind-reader.jpg (renamed to bypass cache)
   await generateThumbnail({
-    bgUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop',
-    overlayGradient: 'linear-gradient(135deg, rgba(20,20,40,0.85) 0%, rgba(10,10,25,0.45) 100%)',
+    bgUrl: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(20,20,40,0.88) 0%, rgba(40,20,60,0.5) 100%)',
     title: '「世界最高のマインドリーダー」が明かす<br><span class="highlight">人の心を読む技術</span>',
     subtitle: '心は読めない。でも「人」は読める。30年かけて学んだスキル',
     speaker: 'Oz Pearlman',
-    outputPath: path.join(outDir, 'mind-reading.jpg')
+    outputPath: path.join(outDir, 'mind-reader.jpg')
+  });
+
+  // 14. work-relationships.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(30,40,60,0.88) 0%, rgba(20,30,50,0.5) 100%)',
+    title: '職場の人間関係、<br><span class="highlight">「頑張れば報われる」は嘘</span>だった',
+    subtitle: '徹夜で完璧な仕事をしても評価されなかった心理学者が見つけたもの',
+    speaker: 'Alyssa Birnbaum',
+    outputPath: path.join(outDir, 'work-relationships.jpg')
   });
 
   console.log('All thumbnails generated!');
