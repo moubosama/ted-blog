@@ -245,5 +245,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'work-relationships.jpg')
   });
 
+  // 15. video-games-parenting.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1493711662062-fa541f7f3d24?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(20,30,50,0.88) 0%, rgba(40,20,60,0.5) 100%)',
+    title: '「ゲームばっかりして！」と言う前に<br><span class="highlight">一緒にやってみた結果</span>',
+    subtitle: 'Fortniteで見えた、親が知らない子どもの一面',
+    speaker: 'Hannah Boquet',
+    outputPath: path.join(outDir, 'video-games-parenting.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
