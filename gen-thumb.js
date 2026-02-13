@@ -247,7 +247,7 @@ async function generateThumbnail(config) {
 
   // 15. video-games-parenting.jpg
   await generateThumbnail({
-    bgUrl: 'https://images.unsplash.com/photo-1493711662062-fa541f7f3d24?w=1200&h=630&fit=crop',
+    bgUrl: 'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=1200&h=630&fit=crop',
     overlayGradient: 'linear-gradient(135deg, rgba(20,30,50,0.88) 0%, rgba(40,20,60,0.5) 100%)',
     title: '「ゲームばっかりして！」と言う前に<br><span class="highlight">一緒にやってみた結果</span>',
     subtitle: 'Fortniteで見えた、親が知らない子どもの一面',
