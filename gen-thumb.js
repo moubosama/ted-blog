@@ -255,5 +255,15 @@ async function generateThumbnail(config) {
     outputPath: path.join(outDir, 'video-games-parenting.jpg')
   });
 
+  // 16. loving-relationships.jpg
+  await generateThumbnail({
+    bgUrl: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=1200&h=630&fit=crop',
+    overlayGradient: 'linear-gradient(135deg, rgba(60,20,40,0.88) 0%, rgba(40,10,30,0.5) 100%)',
+    title: '「愛が冷めた」は嘘。<br>冷めたのは<span class="highlight">「愛する行動」</span>',
+    subtitle: '40カ国450組のカップルを20年間研究して見つけた6つの要素',
+    speaker: 'Sara Nasserzadeh',
+    outputPath: path.join(outDir, 'loving-relationships.jpg')
+  });
+
   console.log('All thumbnails generated!');
 })();
