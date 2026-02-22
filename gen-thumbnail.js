@@ -22,12 +22,12 @@ const path = require('path');
     position: relative;
     width: 1200px;
     height: 630px;
-    background: url('https://images.unsplash.com/photo-1493711662062-fa541f7f3d24?w=1200&q=80&fit=crop') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1493836512294-502baa1986e2?w=1200&q=80&fit=crop') center/cover no-repeat;
   }
   .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(30,30,30,0.85) 0%, rgba(30,30,30,0.6) 50%, rgba(30,30,30,0.4) 100%);
+    background: linear-gradient(135deg, rgba(30,30,30,0.88) 0%, rgba(30,30,30,0.65) 50%, rgba(30,30,30,0.45) 100%);
   }
   .content {
     position: absolute;
@@ -79,17 +79,17 @@ const path = require('path');
     <div class="overlay"></div>
     <div class="content">
       <div class="ted-label">TED要約</div>
-      <div class="main-title">息子に<span class="accent">Fortnite</span>で<br>守られて気づいたこと</div>
-      <div class="subtitle">eスポーツを高校公式活動にした教育者の話</div>
+      <div class="main-title">挫折を「<span class="accent">成功の種</span>」に変える<br>4つのフェーズ</div>
+      <div class="subtitle">Setback Cycleフレームワークで人生を再発明する</div>
     </div>
-    <div class="speaker">Hannah Boquet</div>
+    <div class="speaker">Amy Shoenthal</div>
   </div>
 </body>
 </html>`;
 
   await page.setContent(html, { waitUntil: 'networkidle0', timeout: 15000 });
 
-  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'video-games-parenting.jpg');
+  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'setback-success.jpg');
   await page.screenshot({
     path: outputPath,
     type: 'jpeg',
