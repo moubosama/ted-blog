@@ -22,7 +22,7 @@ const path = require('path');
     position: relative;
     width: 1200px;
     height: 630px;
-    background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80&fit=crop') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80&fit=crop') center/cover no-repeat;
   }
   .overlay {
     position: absolute;
