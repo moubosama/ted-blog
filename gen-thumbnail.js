@@ -22,12 +22,12 @@ const path = require('path');
     position: relative;
     width: 1200px;
     height: 630px;
-    background: url('https://images.unsplash.com/photo-1493836512294-502baa1986e2?w=1200&q=80&fit=crop') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80&fit=crop') center/cover no-repeat;
   }
   .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(30,30,30,0.88) 0%, rgba(30,30,30,0.65) 50%, rgba(30,30,30,0.45) 100%);
+    background: linear-gradient(135deg, rgba(20,20,40,0.92) 0%, rgba(20,20,40,0.7) 50%, rgba(20,20,40,0.5) 100%);
   }
   .content {
     position: absolute;
@@ -50,7 +50,7 @@ const path = require('path');
     width: fit-content;
   }
   .main-title {
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 900;
     line-height: 1.4;
     margin-bottom: 20px;
@@ -79,17 +79,17 @@ const path = require('path');
     <div class="overlay"></div>
     <div class="content">
       <div class="ted-label">TED要約</div>
-      <div class="main-title">挫折を「<span class="accent">成功の種</span>」に変える<br>4つのフェーズ</div>
-      <div class="subtitle">Setback Cycleフレームワークで人生を再発明する</div>
+      <div class="main-title">「<span class="accent">楽しかった旅行</span>」と<br>「<span class="accent">楽しい旅行</span>」は別物だった</div>
+      <div class="subtitle">ノーベル賞心理学者が解く「経験」と「記憶」の謎</div>
     </div>
-    <div class="speaker">Amy Shoenthal</div>
+    <div class="speaker">Daniel Kahneman</div>
   </div>
 </body>
 </html>`;
 
   await page.setContent(html, { waitUntil: 'networkidle0', timeout: 15000 });
 
-  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'setback-success.jpg');
+  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'experience-memory.jpg');
   await page.screenshot({
     path: outputPath,
     type: 'jpeg',
