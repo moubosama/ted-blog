@@ -22,12 +22,12 @@ const path = require('path');
     position: relative;
     width: 1200px;
     height: 630px;
-    background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1200&q=80&fit=crop') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80&fit=crop') center/cover no-repeat;
   }
   .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(20,20,40,0.92) 0%, rgba(20,20,40,0.7) 50%, rgba(20,20,40,0.5) 100%);
+    background: linear-gradient(135deg, rgba(25,25,50,0.93) 0%, rgba(25,25,50,0.75) 50%, rgba(25,25,50,0.55) 100%);
   }
   .content {
     position: absolute;
@@ -50,7 +50,7 @@ const path = require('path');
     width: fit-content;
   }
   .main-title {
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 900;
     line-height: 1.4;
     margin-bottom: 20px;
@@ -79,17 +79,17 @@ const path = require('path');
     <div class="overlay"></div>
     <div class="content">
       <div class="ted-label">TED要約</div>
-      <div class="main-title">「<span class="accent">楽しかった旅行</span>」と<br>「<span class="accent">楽しい旅行</span>」は別物だった</div>
-      <div class="subtitle">ノーベル賞心理学者が解く「経験」と「記憶」の謎</div>
+      <div class="main-title">「<span class="accent">聞いてるよ</span>」が<br>相手をイラつかせる理由</div>
+      <div class="subtitle">相手が求める4つの聴き方「SAIDフレームワーク」</div>
     </div>
-    <div class="speaker">Daniel Kahneman</div>
+    <div class="speaker">Maegan Stephens & Nicole Lowenbraun</div>
   </div>
 </body>
 </html>`;
 
   await page.setContent(html, { waitUntil: 'networkidle0', timeout: 15000 });
 
-  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'experience-memory.jpg');
+  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'great-listener.jpg');
   await page.screenshot({
     path: outputPath,
     type: 'jpeg',
