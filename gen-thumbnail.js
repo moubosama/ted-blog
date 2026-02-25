@@ -22,12 +22,12 @@ const path = require('path');
     position: relative;
     width: 1200px;
     height: 630px;
-    background: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=80&fit=crop') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80&fit=crop') center/cover no-repeat;
   }
   .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(25,25,50,0.93) 0%, rgba(25,25,50,0.75) 50%, rgba(25,25,50,0.55) 100%);
+    background: linear-gradient(135deg, rgba(30,30,55,0.93) 0%, rgba(30,30,55,0.75) 50%, rgba(30,30,55,0.55) 100%);
   }
   .content {
     position: absolute;
@@ -50,7 +50,7 @@ const path = require('path');
     width: fit-content;
   }
   .main-title {
-    font-size: 52px;
+    font-size: 50px;
     font-weight: 900;
     line-height: 1.4;
     margin-bottom: 20px;
@@ -79,17 +79,17 @@ const path = require('path');
     <div class="overlay"></div>
     <div class="content">
       <div class="ted-label">TED要約</div>
-      <div class="main-title">「<span class="accent">聞いてるよ</span>」が<br>相手をイラつかせる理由</div>
-      <div class="subtitle">相手が求める4つの聴き方「SAIDフレームワーク」</div>
+      <div class="main-title"><span class="accent">言いにくいこと</span>を言えるようになる<br>「心のコンパス」</div>
+      <div class="subtitle">難しい会話を乗り越える4方向フレームワーク</div>
     </div>
-    <div class="speaker">Maegan Stephens & Nicole Lowenbraun</div>
+    <div class="speaker">Sarah Crawford-Bohl</div>
   </div>
 </body>
 </html>`;
 
   await page.setContent(html, { waitUntil: 'networkidle0', timeout: 15000 });
 
-  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'great-listener.jpg');
+  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'speak-up.jpg');
   await page.screenshot({
     path: outputPath,
     type: 'jpeg',
