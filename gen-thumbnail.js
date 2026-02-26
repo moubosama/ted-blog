@@ -22,12 +22,12 @@ const path = require('path');
     position: relative;
     width: 1200px;
     height: 630px;
-    background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80&fit=crop') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1200&q=80&fit=crop') center/cover no-repeat;
   }
   .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(30,30,55,0.93) 0%, rgba(30,30,55,0.75) 50%, rgba(30,30,55,0.55) 100%);
+    background: linear-gradient(135deg, rgba(20,15,40,0.94) 0%, rgba(30,20,60,0.8) 50%, rgba(40,25,70,0.6) 100%);
   }
   .content {
     position: absolute;
@@ -50,14 +50,14 @@ const path = require('path');
     width: fit-content;
   }
   .main-title {
-    font-size: 50px;
+    font-size: 52px;
     font-weight: 900;
     line-height: 1.4;
     margin-bottom: 20px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
   }
   .main-title .accent {
-    color: #ffd166;
+    color: #c9a0ff;
   }
   .subtitle {
     font-size: 22px;
@@ -78,18 +78,18 @@ const path = require('path');
   <div class="container">
     <div class="overlay"></div>
     <div class="content">
-      <div class="ted-label">TED要約</div>
-      <div class="main-title"><span class="accent">言いにくいこと</span>を言えるようになる<br>「心のコンパス」</div>
-      <div class="subtitle">難しい会話を乗り越える4方向フレームワーク</div>
+      <div class="ted-label">TED-Ed</div>
+      <div class="main-title"><span class="accent">催眠術</span>は本当に効くのか？<br>科学が出した意外な答え</div>
+      <div class="subtitle">手術中の痛み軽減、オピオイド削減...医学的効果の真実</div>
     </div>
-    <div class="speaker">Sarah Crawford-Bohl</div>
+    <div class="speaker">Devin Terhune</div>
   </div>
 </body>
 </html>`;
 
   await page.setContent(html, { waitUntil: 'networkidle0', timeout: 15000 });
 
-  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'speak-up.jpg');
+  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'hypnosis.jpg');
   await page.screenshot({
     path: outputPath,
     type: 'jpeg',
