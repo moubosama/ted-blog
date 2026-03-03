@@ -22,12 +22,12 @@ const path = require('path');
     position: relative;
     width: 1200px;
     height: 630px;
-    background: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80&fit=crop') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=80&fit=crop') center/cover no-repeat;
   }
   .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(20,30,50,0.94) 0%, rgba(30,40,60,0.8) 50%, rgba(40,50,70,0.6) 100%);
+    background: linear-gradient(135deg, rgba(40,30,50,0.94) 0%, rgba(50,40,60,0.8) 50%, rgba(60,50,70,0.6) 100%);
   }
   .content {
     position: absolute;
@@ -50,14 +50,14 @@ const path = require('path');
     width: fit-content;
   }
   .main-title {
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 900;
     line-height: 1.4;
     margin-bottom: 20px;
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
   }
   .main-title .accent {
-    color: #81d4fa;
+    color: #ffb74d;
   }
   .subtitle {
     font-size: 22px;
@@ -78,18 +78,18 @@ const path = require('path');
   <div class="container">
     <div class="overlay"></div>
     <div class="content">
-      <div class="ted-label">TED要約</div>
-      <div class="main-title">「<span class="accent">もう打つ手がない</span>」と<br>言われた時にやるべきこと</div>
-      <div class="subtitle">余命宣告を受けた医師が、自ら治療法を発見した話</div>
+      <div class="ted-label">TED Podcast</div>
+      <div class="main-title"><span class="accent">家族経営</span>の地雷を避ける方法<br>義父が上司、従兄弟が同僚</div>
+      <div class="subtitle">ハーバード教授が教える「勇気あるコミュニケーション」</div>
     </div>
-    <div class="speaker">David Fajgenbaum & Kiah Williams</div>
+    <div class="speaker">Frances Frei & Anne Morriss</div>
   </div>
 </body>
 </html>`;
 
   await page.setContent(html, { waitUntil: 'networkidle0', timeout: 15000 });
 
-  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'nothing-left-to-try.jpg');
+  const outputPath = path.join(__dirname, 'static', 'images', 'posts', 'business-family.jpg');
   await page.screenshot({
     path: outputPath,
     type: 'jpeg',
